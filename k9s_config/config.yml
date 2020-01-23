@@ -1,0 +1,19 @@
+k9s:
+  refreshRate: 2
+  headless: false
+  logBufferSize: 1000
+  logRequestSize: 200
+  currentContext: it
+  currentCluster: k8s.tangramflex.tech
+  fullScreenLogs: false
+  clusters:
+    k8s.tangramflex.tech:
+      namespace:
+        active: tekton-pipelines
+        favorites:
+        - tekton-pipelines
+        - all
+        - bitbucket
+        - default
+      view:
+        active: pods
