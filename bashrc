@@ -1,12 +1,14 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
-#parse_git_branch() {
-#  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-#}
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 
-source ./kube-ps1.sh
+source /home/"$USER"/dotfiles/kube-ps1.sh
 
-PS1="[\t] \u \w $(kube_ps1) \$ "
+source /home/"$USER"/dotfiles/colors.sh
+
+PS1="${BROWN}[\t]${NC} ${WHITE}\u ${LIGHT_GRAY}\w${RED}\[${DARK_GRAY}$(parse_git_branch)${RED}\]${NC} $(kube_ps1) \n  ${GREEN}\$:${NC} "
 
 export TERM=xterm-256color
 
