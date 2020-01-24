@@ -8,7 +8,7 @@ source /home/"$USER"/dotfiles/kube-ps1.sh
 
 source /home/"$USER"/dotfiles/colors.sh
 
-PS1="${BROWN}[\t]${NC} ${WHITE}\u ${LIGHT_GRAY}\w${RED}\[${DARK_GRAY}$(parse_git_branch)${RED}\]${NC} $(kube_ps1) \n  ${GREEN}\$:${NC} "
+PS1="${BROWN}[\t]${NC} ${WHITE}\u ${LIGHT_GRAY}\w${DARK_GRAY}$(parse_git_branch)${NC} $(kube_ps1) \n  ${GREEN}\$:${NC} "
 
 export TERM=xterm-256color
 
