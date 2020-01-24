@@ -4,7 +4,7 @@
 #  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 #}
 
-source /home/orca/linux-config/kube-ps1/kube-ps1.sh
+source ./kube-ps1.sh
 
 PS1="[\t] \u \w $(kube_ps1) \$ "
 
