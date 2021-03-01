@@ -59,6 +59,10 @@ alias shellcheckr="shellcheck \$(find . -type f -name \"*.sh\")"
 
 alias surrender="sudo chown -R $USER:$USER ."
 
+alias chart="helm"
+
+alias refresh="source ~/.bashrc"
+
 remove_git_submodule ()
 {
     git submodule deinit -f -- $1;
@@ -79,3 +83,13 @@ do
         export KUBECONFIG=${KUBECONFIG}:${dir}
 done
 
+# Add in k3d cluster(s)
+
+for config in $(ls /home/orca/.k3d)
+do
+	export KUBECONFIG=${KUBECONFIG}:/home/orca/.k3d/${config}
+done
+
+export GOPATH="${HOME}/go"
+export GOROOT="/usr/local/go"
+export PATH=$PATH:$GOPATH/bin
